@@ -1,0 +1,8 @@
+- name: Test Connections to my servers
+  hosts: all
+  become: yes  # works as -b flag in CLI
+
+  tasks:
+
+  - name: Ping my servers
+    ping:
