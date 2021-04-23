@@ -11,13 +11,18 @@
       value: 'true'
       vtype: boolean  
 
-  - name: Install Wireshark (TShark)
+  - name: Install CLI wireshark (TShark)
     apt:
       name: tshark
       state: present
       update_cache: yes
   
   - name: Add user to wireshark group
-    user: 
+    user:
       name: "{{ ansible_user }}"
-      group: wireshark
+      groups: wireshark, docker
+      append: yes 
+  
+  - name: Restart the virtual machine for changes to take effect
+    reboot:
+      test_command: "groups"
