@@ -1,6 +1,6 @@
 # Ansible playbook Tshark - install tshark
 ---
-- hosts: users
+- hosts: all
   become: yes
   tasks:
 
@@ -20,8 +20,7 @@
   - name: Add user to wireshark group
     user:
       name: "{{ ansible_user }}"
-      groups: wireshark, docker
-      append: yes 
+      groups: wireshark
   
   - name: Restart the virtual machine for changes to take effect
     reboot:

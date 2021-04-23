@@ -1,4 +1,4 @@
 ---
-- import_playbook: docker.yml
 - import_playbook: shark.yml
+- import_playbook: docker.yml
 - import_playbook: proxy.yml

@@ -1,6 +1,6 @@
 # Ansible playbook for installing ProxyTCP
 ---
-- hosts: users
+- hosts: proxy
   become: yes
   vars: 
     linux_user: "ubuntu"

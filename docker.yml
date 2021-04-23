@@ -47,7 +47,8 @@
     - name: Add user to docker group
       user:
         name: "{{ ansible_user }}"
-        groups: docker
+        groups: docker, wireshark
+        append: yes
     
     - name: Download docker-compose {{ docker_compose_version }}
       get_url:
