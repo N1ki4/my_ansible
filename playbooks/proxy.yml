@@ -25,7 +25,7 @@
       - cmake
       - build-essential
 
-  - name: Copy zconf.h File to the remote machine
+  - name: Copy zconf.h file to the remote machine
     copy:
       remote_src: false
       src: "{{ local_path_to_zconf }}"

@@ -22,6 +22,3 @@
       name: "{{ ansible_user }}"
       groups: wireshark
   
-  # - name: Restart the virtual machine for changes to take effect
-  #   reboot:
-  #     test_command: "groups"

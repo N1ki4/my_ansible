@@ -6,13 +6,13 @@
     docker_compose_version: "1.29.0"
   tasks:
 
-    - name: Sudo apt get update
+    - name: Update packages
       apt: update_cache=yes cache_valid_time=3600
     
-    - name: Sudo apt get upgrade
+    - name: Upgrade packages
       apt: upgrade=dist
     
-    - name: Install all packages
+    - name: Install all packages needed for docker
       apt:
         name: "{{ item }}"
         state: present
@@ -29,7 +29,7 @@
         url: https://download.docker.com/linux/ubuntu/gpg
         state: present
 
-    - name: Apt repository to set up the stable docker version
+    - name: Add repository to set up the stable docker version
       apt_repository:
         repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
         state: present
@@ -44,7 +44,7 @@
         - docker-ce-cli
         - containerd.io
     
-    - name: Add user to docker group
+    - name: Add user to docker group, append to existing groups
       user:
         name: "{{ ansible_user }}"
         groups: docker, wireshark
