@@ -4,7 +4,7 @@
   become: yes
   vars: 
     linux_user: "ubuntu"
-    local_path_to_zconf: "/home/n1ki4/packet_capturing/app/zconf.h"
+    local_path_to_zconf: "/home/username/packet_capturing/app/playbooks/files/zconf.h"
   tasks:
 
   - name: Clone ProxyTCP Repository.
